@@ -1,0 +1,14 @@
+{
+  "name": "St4rii's BIT",
+  "version": "1.0.0",
+  "description": "BOT OF ST4RII",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "oOTeamCocOo",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
