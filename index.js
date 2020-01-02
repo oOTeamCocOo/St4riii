@@ -13,31 +13,21 @@ client.login(process.env.TOKEN)
 
 ;
 
-client.on("message" , message => {
-    if(message.content === "Hey"){
-        message.reply("```Bonjour, mon créateur, c'est oOTeamCocOo, je suis déstiné à apporter la protection de tous !```");
-        message.author.sendMessage('```N hesite pas à m ajouter a ton serveur ! :``` https://discordapp.com/api/oauth2/authorize?client_id=569192657536942162&permissions=0&scope=bot ')
-        console.log("Un utilisateur à dis Hey")
-        
-    }
-});       
 
-client.on("message" , message => {
-    if(message.content === "*invite"){
-        var invite_embed = new Discord.RichEmbed()
-        .setColor('01fa41')
-        .setTitle('```invitation```')
-        .setThumbnail('https://discordapp.com/channels/568369085595779074/569125583787786241/569605069767573600://discordapp.com/channels/568369085595779074/569125583787786241/569599932210872320')
-        .setDescription('L invitation t a bien étais envoyé en privé !')
-        .setTimestamp()
-        .setFooter('Edité par oOTeamCocOo')
-        message.channel.sendMessage(invite_embed)
-        message.author.sendMessage('```N hesite pas à m ajouter a ton serveur ! :``` https://discordapp.com/api/oauth2/authorize?client_id=569192657536942162&permissions=0&scope=bot ')
-        console.log("Un utilisateur à demander l'invite")
-        
-    }
-});
 
+client.on('guildMemberAdd', member =>{
+    let join_embed = new Discord.RichEmbed()
+        .setTitle('BIENVENU')
+        .setDescription(':tada: **' + member.user.username + '** a rejoint ' + member.guild.name)
+        .setFooter('Nous sommes désormais ' + member.guild.memberCount)
+    member.guild.channels.get('569122701692633108').send(join_embed)
+    member.addRole('569114748747120650')
+    let embed = new Discord.RichEmbed()
+        .setDescription(':tada: **' + member.user.username + '** a rejoint ' + member.guild.name)
+        .setFooter('Nous sommes désormais ' + member.guild.memberCount)
+        member.guild.channels.get('569114748747120650')
+        }
+ );
 
 
 
